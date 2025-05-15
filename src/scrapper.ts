@@ -1,5 +1,5 @@
 import axios from "axios";
-import * as cheerio from "cheerio"; // ✅ FIXED LINE
+import * as cheerio from "cheerio"; 
 
 export async function scrapeWebsite(url: string): Promise<string> {
   const res = await axios.get(url);
