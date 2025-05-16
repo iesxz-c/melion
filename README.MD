@@ -1,73 +1,61 @@
-# Gemini QA Frontend
+# Melion — AI-Powered Web Scraper & Q&A System Using LangChain & Gemini
 
-This is a React-based frontend for the Gemini QA system. It connects to a backend service that scrapes content from a website, processes it into chunks, and answers user questions using an AI-powered QA chain.
-
-## Features
-
-- Displays scraped content fetched from the backend
-- Shows content chunks used by the QA system
-- Allows users to ask questions and get AI-generated answers
-- Collapsible sections for better UI organization
-- Loading states and error handling
-
-## Requirements
-
-- Node.js (v16+ recommended)
-- The Gemini QA backend server running (default on `http://localhost:3000`)
-
-## Installation
-
-1. Clone this repository:
-
-   ```bash
-   git clone <repo-url>
-   cd <repo-folder>
-````
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm start
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) (or the port React uses) in your browser.
-
-## Configuration
-
-Make sure your backend server is running and accessible at `http://localhost:3000`. The frontend fetches data from these backend endpoints:
-
-* `GET /debug` — returns scraped raw content and chunks
-* `POST /ask` — accepts a JSON body `{ question: "your question" }` and returns an answer
-
-If your backend runs on a different URL or port, update the API URLs in `App.jsx` accordingly.
-
-## Usage
-
-* View the **Scraped Content** and **Chunks** sections to see the data fetched from the backend.
-* Use the **Ask a Question** section to submit questions and receive answers.
-* Click on each section header to collapse or expand the content.
-
-## Technologies
-
-* React (JSX)
-* Axios for HTTP requests
-* Functional components with hooks
-
-## License
-
-MIT License
+Melion is a full-stack project that scrapes website content, processes and embeds it using LangChain, and enables natural language question answering powered by Gemini AI.
 
 ---
 
-Feel free to customize or extend this frontend to fit your needs!
+## Key Features
 
+### Backend (Node.js + LangChain)
+
+- Website scraping and text extraction
+- Content chunking and vector embedding creation using LangChain utilities
+- Builds a LangChain-based QA chain leveraging Gemini as the LLM
+- REST API exposing `/debug` (scraped content & chunks) and `/ask` (QA)
+- Efficient retrieval & question answering using vector stores and LangChain’s pipeline
+
+### Frontend (React)
+
+- Displays scraped raw content and chunked data with collapsible UI
+- Accepts user questions and queries backend QA chain
+- Shows AI-generated answers with loading and error states
+
+---
+
+## Tech Stack
+
+- **Backend:** Node.js, Express, LangChain, Gemini, TypeScript
+- **Frontend:** React (JSX), Axios
+- **Middleware:** CORS for cross-origin requests
+
+---
+
+## Setup & Run
+
+1. **Backend**
+
+```bash
+cd backend
+npm install
+npm start
+````
+
+2. **Frontend**
+
+```bash
+cd frontend
+npm install
+npm start
 ```
 
-If you want, I can also help generate a README for your backend server.
+3. Visit the React app in your browser and interact with Melion’s QA system.
+
+4. To start the backend server.ts 
+```bash
+npx ts-node src/server.ts
 ```
+5. To start the frontend app
+```
+npm run dev
+```
+---
