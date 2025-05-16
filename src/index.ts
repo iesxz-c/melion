@@ -6,14 +6,14 @@ import readline from "readline";
 
 async function main() {
   const content = await scrapeWebsite("https://en.wikipedia.org/wiki/Akahori_Gedou_Hour_Rabuge");
-  console.log("✅ Website scraped");
+  console.log("Website scraped");
   console.log("Scraped content:\n");
   console.log(content.slice(0, 1000));
 
   const vectorStore = await createVectorStore(content);
-  console.log("✅ Vector store created with", vectorStore.memoryVectors.length, "chunks.");
+  console.log(" Vector store created with", vectorStore.memoryVectors.length, "chunks.");
   const chain = await createQAChain(vectorStore);
-  console.log("✅ Gemini chain ready");
+  console.log(" Gemini chain ready");
 
 
   const rl = readline.createInterface({
@@ -22,15 +22,15 @@ async function main() {
   });
 
 rl.question("Ask your question: ", async (question) => {
-  console.log("🕵️ Asking Gemini...");
-  console.log("📨 Input question:", question); // ✅ Log the question being passed
+  console.log("Asking Gemini...");
+  console.log(" Input question:", question);
 
   try {
     const response = await chain.invoke({ input: question });
-    console.log("📤 Full response:", response); // ✅ Check if Gemini responded
-    console.log("\n🧠 Answer:\n", response.answer || response.output || "(no answer field)");
+    console.log(" Full response:", response); 
+    console.log("\n Answer:\n", response.answer || response.output || "(no answer field)");
   } catch (error) {
-    console.error("❌ Error invoking Gemini:", error);
+    console.error(" Error invoking Gemini:", error);
   }
 
   rl.close();
