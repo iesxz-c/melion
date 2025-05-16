@@ -5,7 +5,7 @@ import { createQAChain } from "./qa";
 import readline from "readline";
 
 async function main() {
-  const content = await scrapeWebsite("https://en.wikipedia.org/wiki/Akahori_Gedou_Hour_Rabuge");
+  const content = await scrapeWebsite("https://js.langchain.com/docs/introduction");
   console.log("Website scraped");
   console.log("Scraped content:\n");
   console.log(content.slice(0, 1000));

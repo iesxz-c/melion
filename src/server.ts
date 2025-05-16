@@ -34,7 +34,7 @@ async function startServer(): Promise<void> {
     app.use(express.json());
     
     console.log("Scraping website...");
-    const content = await scrapeWebsite("https://en.wikipedia.org/wiki/Akahori_Gedou_Hour_Rabuge");
+    const content = await scrapeWebsite("https://en.wikipedia.org/wiki/IMac_G4");
     console.log("Website scraped successfully.");
     
     console.log("Creating vector store...");

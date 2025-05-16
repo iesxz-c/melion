@@ -5,7 +5,7 @@ export async function scrapeWebsite(url: string): Promise<string> {
   const res = await axios.get(url);
   const $ = cheerio.load(res.data);
 
-  const elements = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "a"];
+  const elements = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "a","div","table","form"];
   const text = elements
     .map(tag => 
       $(tag).map((_, el) => $(el).text().trim()).get().join("\n")
