@@ -1,6 +1,6 @@
 # Melion — AI-Powered Web Scraper & Q&A System Using LangChain & Gemini
 
-Melion is a full-stack project that scrapes website content, processes and embeds it using LangChain, and enables natural language question answering powered by Gemini AI.
+Melion is a web scrapping tool scrapes website content, processes and embeds it using LangChain, and enables natural language question answering powered by Gemini AI.
 
 ---
 
